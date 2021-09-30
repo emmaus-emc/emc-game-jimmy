@@ -64,15 +64,13 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
 
-  fill("#3d26bf");
-  rect(spelerX, spelerY, 50, 50);
 
   fill("#805532");
-  ellipse(spelerX + 25, spelerY - 25, 50, 50);
+  ellipse(spelerX + 12, spelerY + 10, 15, 15);
 
   fill("green");
-  rect(spelerX, spelerY + 10, 25, 25);
-  fill("red");
+  rect(spelerX, spelerY + 18, 25, 17);
+  fill("#271394");
   rect(spelerX + 13, spelerY + 35, 12.5, 15);
   fill("#271394");
   rect(spelerX, spelerY + 35, 12.5, 15);
