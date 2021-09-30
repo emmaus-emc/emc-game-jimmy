@@ -37,13 +37,6 @@ if (keyIsDown(LEFT_ARROW)) {
     spelerX += 5;
   }
 
-  if (keyIsDown(UP_ARROW)) {
-    spelerY -= 5;
-  }
-
-  if (keyIsDown(DOWN_ARROW)) {
-    spelerY += 5;
-  }
 clear();
 };
 
@@ -68,12 +61,12 @@ var tekenAlles = function () {
   fill("#805532");
   ellipse(spelerX + 12, spelerY + 10, 15, 15);
 
-  fill("green");
+  fill("#66d16e");
   rect(spelerX, spelerY + 18, 25, 17);
   fill("#271394");
-  rect(spelerX + 13, spelerY + 35, 12.5, 15);
+  rect(spelerX + 15, spelerY + 35, 10, 15);
   fill("#271394");
-  rect(spelerX, spelerY + 35, 12.5, 15);
+  rect(spelerX, spelerY + 35, 10, 15);
 
 };
 
