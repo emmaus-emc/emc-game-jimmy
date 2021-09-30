@@ -15,7 +15,7 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
 var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerY = 450; // y-positie van speler
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -29,8 +29,22 @@ var beweegAlles = function () {
 
   // kogel
 
-  // speler
+if (keyIsDown(LEFT_ARROW)) {
+    spelerX -= 5;
+  }
 
+  if (keyIsDown(RIGHT_ARROW)) {
+    spelerX += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    spelerY -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    spelerY += 5;
+  }
+clear();
 };
 
 /**
@@ -49,19 +63,19 @@ var verwerkBotsing = function () {
  * Tekent spelscherm
  */
 var tekenAlles = function () {
-  // achtergrond
 
-  // vijand
+  fill("#3d26bf");
+  rect(spelerX, spelerY, 50, 50);
 
-  // kogel
+  fill("#805532");
+  ellipse(spelerX + 25, spelerY - 25, 50, 50);
 
-  // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-
-  // punten en health
+  fill("green");
+  rect(spelerX, spelerY + 10, 25, 25);
+  fill("red");
+  rect(spelerX + 13, spelerY + 35, 12.5, 15);
+  fill("#271394");
+  rect(spelerX, spelerY + 35, 12.5, 15);
 
 };
 
@@ -85,8 +99,6 @@ var checkGameOver = function () {
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
-
-  // Kleur de achtergrond blauw, zodat je het kunt zien
   background('blue');
 }
 
