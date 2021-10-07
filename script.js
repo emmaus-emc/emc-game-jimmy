@@ -25,16 +25,17 @@ var spelerY = 450; // y-positie van speler
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
-  // vijand
 
-  // kogel
-
+    if (spelerX >= 10) {
 if (keyIsDown(LEFT_ARROW)) {
     spelerX -= 5;
   }
+    }
 
-  if (keyIsDown(RIGHT_ARROW)) {
+  if (spelerX != 1250) {
+if (keyIsDown(RIGHT_ARROW)) {
     spelerX += 5;
+  }
   }
 
 clear();
@@ -90,7 +91,7 @@ var checkGameOver = function () {
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
-  background('blue');
+  background("blue");
 }
 
 /**
@@ -109,6 +110,5 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
   }
 }
