@@ -17,7 +17,7 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
-var vijandX = 500; // x-positie van speler
+var vijandX = 600; // x-positie van speler
 var vijandY = 420; // y-positie van speler
 
 /* ********************************************* */
@@ -54,7 +54,25 @@ var beweegAlles = function () {
   }
   //vijand
   vijandY = vijandY + 10;
+  if (vijandY > 690) {
+    function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
+const newPos = randomIntFromInterval(10, 1250)
+    vijandY = vijandY - 700;
+    vijandX = newPos;
+  }
+
+
+  if (spelerY == vijandY) {
+     if (vijandX - spelerX < 50 && vijandX - spelerX > 50) {
+      console.log("botsing");
+     }
+  }
+
+
+  
 
 
 };
