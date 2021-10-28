@@ -17,6 +17,9 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
+var vijandX = 500; // x-positie van speler
+var vijandY = 420; // y-positie van speler
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -25,20 +28,35 @@ var spelerY = 450; // y-positie van speler
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
-
-    if (spelerX >= 10) {
-if (keyIsDown(LEFT_ARROW)) {
-    spelerX -= 5;
-  }
+  // speler
+  if (spelerX >= 10) {
+    if (keyIsDown(LEFT_ARROW)) {
+      spelerX -= 5;
     }
-
-  if (spelerX != 1250) {
-if (keyIsDown(RIGHT_ARROW)) {
-    spelerX += 5;
-  }
   }
 
-clear();
+  if (spelerX <= 1250) {
+    if (keyIsDown(RIGHT_ARROW)) {
+      spelerX += 5;
+    }
+  }
+
+  if (spelerY >= 10) {
+    if (keyIsDown(UP_ARROW)) {
+      spelerY -= 5;
+    }
+  }
+
+  if (spelerY <= 680) {
+    if (keyIsDown(DOWN_ARROW)) {
+      spelerY += 5;
+    }
+  }
+  //vijand
+  vijandY = vijandY + 10;
+
+
+
 };
 
 /**
@@ -57,8 +75,7 @@ var verwerkBotsing = function () {
  * Tekent spelscherm
  */
 var tekenAlles = function () {
-
-
+  clear();
   fill("#805532");
   ellipse(spelerX + 12, spelerY + 10, 15, 15);
 
@@ -69,6 +86,9 @@ var tekenAlles = function () {
   fill("#271394");
   rect(spelerX, spelerY + 35, 10, 15);
 
+
+  fill("#271394");
+  rect(vijandX, vijandY + 25, 20, 25);
 };
 
 /**
